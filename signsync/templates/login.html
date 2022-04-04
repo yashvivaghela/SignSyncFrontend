@@ -3,11 +3,26 @@
 <html>
 
 <head>
-  <title>LOGIN</title>
+  <title>SignSync</title>
 
   <link rel="icon" href="{%static 'img/logo1.png' %}">
   <style>
-
+    body {
+      background-image: url("{%static 'img/1.jpg' %}");
+      background-repeat: no-repeat;
+    }
+    div.card {
+            position: absolute;
+            background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.22) -0.3%, rgba(255, 255, 255, 0.2) 81.34%);
+            backdrop-filter: blur(20px);
+            /* Note: backdrop-filter has minimal browser support */
+            border-radius: 20px;
+            position: absolute;
+            width: 60%;
+            height: 50%;
+            left: 300px;
+            top: 190px;
+        }
   </style>
 
 
@@ -17,10 +32,11 @@
 
 
 <!-- <nav class="navbar navbar-dark bg-dark"> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark ">
   <div class="container-fluid">
+    <img style="margin-left:20px" src="{%static 'img/logo1.png' %}" alt="logo" width="50" height="50">
 
-    <a class="navbar-brand mx-4" href="#">SignSync</a>
+    <a class="navbar-brand mx-4" style="margin-left:20px;font-size: 25px;" href="#">SignSync</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,19 +44,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:50%">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <form class="d-flex ml-0" style="margin-right:5% ">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="index.html">Home</a>
+      
+        <li class="nav-item mx-4" style="font-size: 19px;">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="login.html">Login</a>
+        <li class="nav-item mx-4"style="font-size: 19px;">
+          <a class="nav-link active " href="login.html">Login</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-4"style="font-size: 19px;">
           <a class="nav-link" href="register.html">SignUp</a>
         </li>
+       
       </ul>
 
     </div>
@@ -48,37 +62,37 @@
 </nav>
 
 <!-- login form -->
-<div class="card mx-auto mb-auto " style="border-radius: 20px; width: 60% ; height: 80%; margin-top:10%;">
+<div class="card mx-auto mb-auto text-light" >
   <p class="text-justify  mx-auto" style="font-size: 40px; font-weight:bold">Log In</p>
 
   <form method="POST" action="" class="p-3">
     {%csrf_token%}
     <div class="mb-3 ">
-      <div class="mb-3 ">
+      <div class="mb-3 text-light">
         <label for="exampleInputUsername" class="form-label">Username</label>
-        <input name="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3 text-light">
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
-        <div id="passwordHelpBlock" class="form-text text-primary">
+        <!-- <div id="passwordHelpBlock" class="form-text text-primary">
           Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special
           characters, or emoji.
-        </div>
+        </div> -->
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary btn btn-dark mx-2 mb-6">Submit</button>
   </form>
-  
-  
+
+
 
 
 
 </div>
 <div class=" mb-4" style="margin-bottom:2px;">
   <div class="d-flex justify-content-center links " style="font-weight:semi-bold">
-    Don't have an account?<a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+    Don't have an account?<button class="btn btn-secondary mx-2 mb-4"><a href="{% url 'register' %}" class="ml-2 text-light">Sign Up</a></button>
   </div>
 </div>
 
